@@ -7,10 +7,10 @@ st.markdown("## Si la respuesta es que sí ¡Este es tu sitio!")
 
 st.markdown("### Antes de empezar necesitaremos saber qué grupo de ciclistas quieres predecir")
 
+
 option = st.selectbox(
     '¿A cuál quieres predecir?',
     ("Elige una opción",'Casuales', 'Registrados', 'Totales'))
-
 
 if option == "Casuales":
     st.write('Has seleccionado el grupo de ciclista', option, ":smile:")
@@ -24,9 +24,11 @@ elif option == "Totales":
 
 st.markdown("### Por último necesitaremos saber que fecha exacta es la que quieres predecir.")
 
+
 d = st.date_input(
     "¿Qué fecha quieres predecir el alquiler de bicis?",
     datetime.date(2018, 1, 1))
+
 
 st.write('La fecha que quieres predecir es:', d)
 
