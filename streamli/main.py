@@ -7,10 +7,10 @@ import numpy as np
 
 st.title(":green[RANDOM LOVE] :heart:")
 
-st.markdown("# ¿Eres un apasionado del ciclismo y quieres saber cuántas bicicletas se alquilaron en una fecha determinada?")
-st.markdown("## Si la respuesta es que sí ¡Este es tu sitio!")
+st.markdown("# ¿Quieres saber cuántas bicis necesitas en GoGreen para un día en concreto?")
+st.markdown("## Danos la fecha y te predecimos la cantidad al instante.")
 
-st.markdown("### Antes de empezar necesitaremos saber qué grupo de ciclistas quieres predecir")
+st.markdown("### Antes de empezar necesitamos saber para qué tipo de usuario quieres predecir.")
 
 
 option = st.selectbox(
@@ -27,7 +27,7 @@ elif option == "Totales":
     st.write('Has seleccionado el grupo de ciclista', option, "🚴‍♀️🚴‍♀️")
     st.image("fotos/ciclista3.png")
 
-st.markdown("### Por último necesitaremos saber que fecha exacta es la que quieres predecir.")
+st.markdown("### Por último introduce la fecha exacta.")
 
 
 d = st.date_input(
@@ -39,13 +39,13 @@ if d == datetime.date(2018,1,1):
 else:
 
 
-    st.write('La fecha que quieres predecir es:', d)
+    st.write('La fecha que quieres predecir es:',  d)
 
     col1, col2 = st.columns(2)
 
     with col1:
         estacion= sp.get_season(d)
-        st.write("En esa fecha se encontraban en:")
+        st.write("Esa fecha:")
         if estacion == "invierno":
             atemp = 14
             hum = 54
@@ -73,7 +73,7 @@ else:
 
     with col2:
         festivos = sp.detectar_feriados(d)
-        st.write("Ese día era:")
+        st.write("Ese día:")
         if festivos == "festivo":
             st.image("fotos/festivo.png")
         elif festivos == "no festivo":
@@ -85,21 +85,22 @@ else:
 
     diccionario = {'atemp':atemp, 'hum':hum, 'windspeed':windspeed,'season':estacion,'yr':d.year,'mnth':d.month,'holiday':festivos,'weekday':dia_semana,'weathersit':weathersit}
 
-    time.sleep(2)
+    time.sleep(5)
     if option == "Casuales":
         prediccion = sp.prediccion_casual(diccionario)
-        st.write("La predicción para el grupo de casuales con un 76% de fiabilidad es:")
-        st.markdown(round(prediccion[0][0],0))
+        st.markdown("### La predicción para el grupo de casuales con un 76% de fiabilidad es:")
+        st.markdown(f"## {round(prediccion[0][0],0)} bicis :smile:")
     elif option == "Registrados":
         prediccion = sp.prediccion_registered(diccionario)
-        st.write("La predicción para el grupo de registrados con un 85% de fiabilidad es:")
-        st.markdown(round(prediccion[0][0],0))
+        st.markdown("### La predicción para el grupo de registrados con un 84% de fiabilidad es:")
+        st.markdown(f"## {round(prediccion[0][0],0)} bicis :smile:")
     elif option == "Totales":
         prediccion = sp.prediccion_cnt(diccionario)
-        st.write("La predicción para el grupo de casuales con un 88% de fiabilidad es:")
-        st.markdown(round(prediccion[0][0],0))
+        st.markdown("### La predicción para el grupo de casuales con un 88% de fiabilidad es:")
+        st.markdown(f"## {round(prediccion[0][0],0)} bicis :smile:")
     
-    st.write("Estas serían las bicicletas que necesitaremos para alquilar :smile:")
+
+    
     st.markdown("Happy Coding :smile:")
 
 
