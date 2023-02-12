@@ -19,15 +19,17 @@ Adjuntamos, en este orden,  el link para tablero canvas, basado en metodologias 
 https://github.com/orgs/Adalab/projects/165
  - presentación: 
 (https://drive.google.com/file/d/1gDOUVFm_JC9_ZLoA6NUxSA_S_89fKoxt/view?usp=sharing)
+
+
 ## Archivos   
 ***
      Los archivos está organizados como:
 
-	  - datos: contiene el dataset original y los diferentes ficheros resultantes de las etapas de transformación hasta la predición de los dadtos.
+	- datos: contiene el dataset original y los diferentes ficheros resultantes de las etapas de transformación hasta la predición de los dadtos.
 
-    - borrador: contiene la exploración de los datos - EDA - y los codigos desarrollados a lo largo del proyecto organizaos por el estudio de las diferentes variables respuesta así como modelos de machine learning y prediciones.
+    	- code: contiene la exploración de los datos - EDA - y los codigos desarrollados a lo largo del proyecto organizaos por el estudio de las diferentes variables respuesta así como modelos de machine learning y prediciones.
     
-    - streamli: en esta carpeta se encuentran los códigos e imagenes para la presentación de la predición a través de streamlit
+    	- streamli: en esta carpeta se encuentran los códigos e imagenes para la presentación de la predición a través de streamlit
 
     
       
@@ -51,7 +53,7 @@ https://github.com/orgs/Adalab/projects/165
 - holydays
 - researchpy
 - itertools
-- ... y otras.
+- ... entre otras.
 
 ## Integrantes 
 ***
